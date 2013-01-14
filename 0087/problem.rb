@@ -2,7 +2,6 @@
 N = 50_000_000
 
 $primes   = []
-$factors  = []
 
 def prime_sieve( n )
   $primes_a = Array.new( n, true )

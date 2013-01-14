@@ -2,7 +2,6 @@ require 'pp'
 #require 'ruby-prof'
 
 N = 1 * 10 ** ARGV[0].to_i
-$meets_condts = Array.new( N, false )
 $checked = Array.new( N, false )
 
 $primes = Array.new( N.to_i, true )
@@ -23,6 +22,7 @@ def prime_sieve( n )
 end
 
 prime_sieve( N )
+
 
 (2..N).each do |n|
   $prime_array << n if $primes[n]
@@ -47,10 +47,9 @@ end
 factor_cnt = 0
 s_factor_cnt = 0
 
-$check
 
 def dfs( factors, n )
-#  puts "dfs( #{factors}, #{n} )"
+#  puts "dfs( #{factors.join( ',' )}, #{n} )"
 #  return if $checked[n]
 
   $checked[n] = true
@@ -61,7 +60,6 @@ def dfs( factors, n )
   end
 
   if square?( ss_factors )
-    $meets_condts[n] = true
     $sum += n
   end
 
